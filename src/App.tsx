@@ -1,7 +1,10 @@
 import MenuItem from "./components/MenuItem.tsx"
 import { menuItems } from "./data/db.ts"
+import useOrder from "./hooks/useOrder.ts"
 
 function App() {
+
+  const { addItem } = useOrder()
 
   return (
     <>
@@ -16,6 +19,7 @@ function App() {
               <MenuItem 
                 key={item.id}
                 item={item}
+                addItem={addItem}
               />
             ))}
           </div>
